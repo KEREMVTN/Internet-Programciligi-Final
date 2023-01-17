@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebProjeVize3.Models.Ders>
+@{
+    <h1>Ders Bilgileri Listeleme</h1>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ders_Adı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ders_Kredisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Okul_Yönetim_Id)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ders_Adı)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ders_Kredisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Okul_Yönetim_Id)
+                </td>
+                <td>
+                    @Html.ActionLink("Guncelle", "DersDetay", new {  id=item.Id  }) |
+                    @Html.ActionLink("Sil", "DersSil", new {  id=item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+    
+
+

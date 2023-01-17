@@ -1,0 +1,45 @@
+﻿@model WebProjeVize3.Models.Ogrenci
+
+@{
+    <h1>Yeni Öğrenci Oluşturma</h1>
+
+    <div>
+        <form asp-action="Yeni">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ad_Soyad" class="control-label"></label>
+                <input asp-for="Ad_Soyad" class="form-control" />
+                <span asp-validation-for="Ad_Soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kayıt_Tarihi" class="control-label"></label>
+                <input asp-for="Kayıt_Tarihi" class="form-control" />
+                <span asp-validation-for="Kayıt_Tarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ögrenci_No" class="control-label"></label>
+                <input asp-for="Ögrenci_No" class="form-control" />
+                <span asp-validation-for="Ögrenci_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doğum_Tarihi" class="control-label"></label>
+                <input asp-for="Doğum_Tarihi" class="form-control" />
+                <span asp-validation-for="Doğum_Tarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bölümü" class="control-label"></label>
+                <input asp-for="Bölümü" class="form-control" />
+                <span asp-validation-for="Bölümü" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+}

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebProjeVize3.Models.OgrenciDers>
+
+@{
+    <h1>Öğrenci Ders Bilgileri Listeleme</h1>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ders_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ogrenci_Id)
+            </th>
+            
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ders_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ogrenci_Id)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("Guncelle", "OgrenciDersDetay", new {  id=item.Id  }) |
+                    @Html.ActionLink("Sil", "OgrenciDersSil", new {  id=item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

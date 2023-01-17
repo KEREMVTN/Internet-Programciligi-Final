@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebProjeVize3.Models.Ogrenci>
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+@{
+    <h1>Öğrenci Bilgileri Listeleme</h1>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad_Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kayıt_Tarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ögrenci_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doğum_Tarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bölümü)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Ad_Soyad)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Kayıt_Tarihi)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Ögrenci_No)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Doğum_Tarihi)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Bölümü)
+                    </td>
+                    <td>
+                    @Html.ActionLink("Guncelle", "OgrenciDetay", new {  id=item.Id  }) |
+                    @Html.ActionLink("Sil", "OgrenciSil", new {  id=item.Id })
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
